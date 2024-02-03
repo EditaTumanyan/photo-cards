@@ -1,0 +1,390 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #292c2e;
+  box-sizing: border-box;
+}
+
+.container {
+  margin-bottom: 3.5em;
+}
+
+.navigation {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  height: 3.5em;
+  background: #1f2224;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: -1em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 1.5rem;
+}
+
+.header-link {
+  background: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #a0a0a1;
+  display: inline-block;
+  font-size: 1em;
+  justify-content: space-between;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+}
+
+header a span,
+.about {
+  color: white;
+  background: transparent;
+}
+
+header .about i {
+  color: #62676b;
+  background: transparent;
+}
+header a i {
+  padding-left: 0.6rem;
+}
+
+.modal {
+  width: 100%;
+  height: 60%;
+  margin-bottom: 55px;
+  display: none;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 20px;
+  z-index: 1001;
+  overflow: hidden;
+
+
+  box-shadow: -1px -200px 300px 85px rgba(41, 44, 46, 0.7);
+
+}
+
+.modal-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1rem;
+  text-align: left;
+}
+.modal-content {
+  box-sizing: border-box;
+  width: 48%;
+  padding: 25px;
+}
+
+
+
+.modal-content p {
+  width: 100%;
+  display: flex;
+  margin: 10px 0;
+  line-height: 25px;
+  text-align: left;
+  color: #6a6f71;
+}
+
+.modal-content h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 17px;
+}
+
+.icons {
+  margin: 16px 0;
+}
+
+.icons a {
+  text-decoration: none;
+}
+.icons i {
+  padding-right: 1rem;
+  color: #6a6f71;
+  font-size: 24px;
+}
+
+.copyright a {
+  color: inherit;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #616466;
+  font-size: 34px;
+  cursor: pointer;
+  background: none;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  width: 100%;
+}
+
+input[type="text"] {
+  height: 2.75em;
+  background: #34363b;
+  border: 1px solid #34363b;
+  transition: border-color 0.3s ease;
+  color: #a0a0a1;
+  display: block;
+  outline: 0;
+  padding: 0 1em;
+  width: 100%;
+}
+
+.field.half {
+  width: 48%;
+}
+.field {
+  margin-bottom: 15px;
+}
+
+.field textarea {
+  border: 1px solid #34363b;
+  width: 100%;
+  height: 150px;
+  background: #34363b;
+  outline: 0;
+}
+
+.fields input:focus,
+.fields textarea:focus {
+  border-color: #34a58e;
+}
+
+#message {
+  padding: 15px 15px;
+}
+textarea[placeholder="Message"] {
+  color: #a0a0a1;
+}
+
+.actions input {
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+}
+input[type="submit"] {
+  background-color: #34a58e;
+  border: none;
+  color: white;
+}
+
+input[type="reset"] {
+  background-color: #34363b;
+  color: white;
+  border: 1px solid #34363b;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.photo {
+  width: 33.33%;
+  height: 300px;
+  object-fit: contain;
+}
+
+.photo img {
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+h2 {
+  margin-top: -2.5rem;
+  color: white;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: 0.8rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  margin-left: 1rem;
+  letter-spacing: 0.1em;
+}
+
+p {
+  display: none;
+  color: white;
+}
+
+
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 119, 119, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.lightbox-content {
+  position: relative;
+  text-align: center;
+}
+
+.lightbox-img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: cover;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+}
+
+.lightbox-text {
+  padding: 4em 2em 0.1em 1em;
+  color: white;
+  margin-top: -70px;
+  text-align: left;
+}
+
+#lightboxDescription {
+  margin-top: -2.8rem;
+  color: white;
+  line-height: 0.5;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  margin-left: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.img-description {
+  font-size: 0.8rem;
+  margin-right: 40px;
+}
+
+#chevronLeft,
+#chevronRight {
+  font-size: 2em;
+  background: none;
+  
+}
+
+#chevronLeft {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+.lightbox-content span{
+  display: none;
+
+}
+.lightbox-content:hover span{
+  color: #ffffff;
+  display: block;
+
+}
+#chevronRight {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+
+@media (max-width: 820px) {
+  .photo {
+    width: 50%;
+  }
+  header {
+    top: 0;
+  }
+  .modal {
+    top: 255px;
+    box-shadow: -1px 200px 300px 85px rgba(41, 44, 46, 0.7);
+  }
+
+  .main {
+    margin-top: 55px;
+  }
+.lightbox-content{
+  background: none;
+}
+  .lightbox-text {
+    display: none;
+  }
+  .lightbox-overlay {
+    padding: 0 30px;
+  }
+  .lightbox-close {
+    display: none;
+  }
+  #chevronLeft,
+  #chevronRight {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .photo {
+    width: 50%;
+  }
+  .modal {
+    min-width: 520px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .modal-content {
+    width: 100%;
+  }
+  .modal {
+    overflow: scroll;
+  }
+}
+
+
